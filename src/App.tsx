@@ -9,7 +9,7 @@ import Contact from '@/pages/Contact';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/patrick-portfolio">
       <div className="min-h-screen bg-background text-foreground">
         <Navigation />
         <Routes>
