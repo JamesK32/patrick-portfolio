@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import { Camera, Video, Mail, Instagram, Youtube } from 'lucide-react';
+import { HeroSection } from '@/components/ui/hero-section';
 import { PortfolioGallery } from '@/components/ui/portfolio-gallery';
+import { Mail, Instagram, Youtube } from 'lucide-react';
 
 // Featured work images
 const featuredImages = [
@@ -48,58 +48,9 @@ const featuredImages = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section with Patrick's Photo */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image - Placeholder for Patrick's photo */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&auto=format&fit=crop&q=80"
-            alt="Patrick O'Neil"
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
-            Patrick O'Neil
-          </h1>
-          <p className="text-xl md:text-2xl text-white/80 mb-8">
-            Photographer & Video Artist
-          </p>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto mb-12">
-            Capturing moments with clarity and personality from Wakefield, Massachusetts
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              to="/photos"
-              className="flex items-center gap-2 px-8 py-4 bg-white text-black font-medium rounded-full hover:bg-white/90 transition-all hover:scale-105"
-            >
-              <Camera size={20} />
-              View Photos
-            </Link>
-            <Link
-              to="/videos"
-              className="flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-medium rounded-full border border-white/20 hover:bg-white/20 transition-all hover:scale-105 backdrop-blur-sm"
-            >
-              <Video size={20} />
-              Watch Videos
-            </Link>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-white/50 rounded-full" />
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen pt-16">
+      {/* Hero Section */}
+      <HeroSection />
 
       {/* Portfolio Gallery Section */}
       <PortfolioGallery
