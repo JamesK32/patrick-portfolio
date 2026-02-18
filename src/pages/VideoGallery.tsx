@@ -1,77 +1,69 @@
-import FloatingCardGallery, { type GalleryCard } from '@/components/ui/floating-card-gallery';
+import { PortfolioGallery } from '@/components/ui/portfolio-gallery';
 
 // Patrick's video work
-const videoCards: GalleryCard[] = [
+const videoImages = [
   {
-    title: "Social Media Content",
-    description: "Engaging video content optimized for social platforms.",
-    fullDescription: "Creating scroll-stopping content for Instagram, TikTok, and other social platforms. From reels to stories, each video is crafted to maximize engagement and tell compelling visual stories.",
-    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-    author: "Patrick O'Neil",
-    category: "Social Media",
-    tags: ["Social Media", "Reels", "TikTok", "Instagram"]
+    src: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop&q=80",
+    alt: "Social Media Content",
+    title: "Social Media"
   },
   {
-    title: "Music Video Production",
-    description: "Cinematic music videos that bring songs to life visually.",
-    fullDescription: "Collaborating with artists to create music videos that amplify their creative vision. From concept development to final edit, each project combines storytelling with striking visuals.",
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-    author: "Patrick O'Neil",
-    category: "Music Video",
-    tags: ["Music Video", "Cinematic", "Production", "Artist Collaboration"]
+    src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80",
+    alt: "Music Video Production",
+    title: "Music Videos"
   },
   {
-    title: "Event Videography",
-    description: "Capturing special moments at events and celebrations.",
-    fullDescription: "Professional event coverage that captures the energy and emotion of your special occasions. From corporate events to personal celebrations, every moment is documented with care.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-    author: "Patrick O'Neil",
-    category: "Events",
-    tags: ["Events", "Corporate", "Celebrations", "Documentary"]
+    src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&q=80",
+    alt: "Event Videography",
+    title: "Events"
   },
   {
-    title: "Personal Projects",
-    description: "Artistic video pieces exploring personal creative vision.",
-    fullDescription: "Self-directed video art projects that push creative boundaries. These pieces explore themes, techniques, and storytelling methods that define my unique visual style and artistic voice.",
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-    author: "Patrick O'Neil",
-    category: "Personal",
-    tags: ["Art", "Experimental", "Creative", "Personal Vision"]
+    src: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=600&fit=crop&q=80",
+    alt: "Personal Projects",
+    title: "Personal"
   },
   {
-    title: "Brand Content",
-    description: "Video content that elevates brand identity and messaging.",
-    fullDescription: "Creating video content that helps brands connect with their audience. From product showcases to brand stories, each video is designed to communicate your message effectively.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-    author: "Patrick O'Neil",
-    category: "Brand",
-    tags: ["Brand", "Commercial", "Marketing", "Content"]
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80",
+    alt: "Brand Content",
+    title: "Brand"
   },
   {
-    title: "Short Films",
-    description: "Narrative short films with cinematic production value.",
-    fullDescription: "Original short films that combine compelling narratives with high production quality. Each project is an opportunity to explore storytelling through the medium of film.",
-    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-    author: "Patrick O'Neil",
-    category: "Film",
-    tags: ["Short Film", "Narrative", "Cinematic", "Storytelling"]
+    src: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop&q=80",
+    alt: "Short Films",
+    title: "Films"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop&q=80",
+    alt: "Documentary Work",
+    title: "Documentary"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=600&fit=crop&q=80",
+    alt: "Commercial Production",
+    title: "Commercial"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1579566346927-c68383817a25?w=800&h=600&fit=crop&q=80",
+    alt: "Cinematic Work",
+    title: "Cinematic"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop&q=80",
+    alt: "Behind the Scenes",
+    title: "BTS"
   },
 ];
 
 export default function VideoGallery() {
   return (
-    <div className="pt-16">
-      <FloatingCardGallery
-        cards={videoCards}
-        backgroundColor="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900"
-        accentColor="rgba(99, 102, 241, 0.5)"
-        maxCards={6}
+    <div className="pt-16 min-h-screen bg-background">
+      <PortfolioGallery
+        title="Video Gallery"
+        archiveButton={{
+          text: "Contact for projects",
+          href: "/contact"
+        }}
+        images={videoImages}
       />
     </div>
   );
