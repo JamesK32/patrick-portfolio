@@ -1,5 +1,50 @@
 import { Link } from 'react-router-dom';
 import { Camera, Video, Mail, Instagram, Youtube } from 'lucide-react';
+import { PortfolioGallery } from '@/components/ui/portfolio-gallery';
+
+// Featured work images
+const featuredImages = [
+  {
+    src: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=600&fit=crop&q=80",
+    alt: "Portrait Photography",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80",
+    alt: "Music Video Production",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop&q=80",
+    alt: "Graduation Photography",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&q=80",
+    alt: "Landscape Photography",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop&q=80",
+    alt: "Short Films",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&q=80",
+    alt: "Creative Headshots",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop&q=80",
+    alt: "Social Media Content",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop&q=80",
+    alt: "Digital Art",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&q=80",
+    alt: "Event Coverage",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=600&fit=crop&q=80",
+    alt: "Personal Projects",
+  },
+];
 
 export default function Home() {
   return (
@@ -55,6 +100,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Portfolio Gallery Section */}
+      <PortfolioGallery
+        title="Browse My Work"
+        archiveButton={{
+          text: "View full gallery",
+          href: "/photos"
+        }}
+        images={featuredImages}
+        className="bg-muted/30"
+      />
 
       {/* Footer Section */}
       <section className="py-20 px-6 bg-background">
